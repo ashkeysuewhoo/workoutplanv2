@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Glow-Up Plan 🌸</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blush:    #fce4ec;
+    --rose:     #f48fb1;
+    --hot:      #e91e8c;
+    --lavender: #f3e5f5;
+    --lilac:    #ce93d8;
+    --purple:   #9c27b0;
+    --mint:     #e8f5e9;
+    --sage:     #81c784;
+    --cream:    #fffaf7;
+    --peach:    #ffe0b2;
+    --text:     #4a2040;
+    --muted:    #b07090;
+    --white:    #ffffff;
+    --shadow:   rgba(233,30,140,0.12);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'Nunito', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── FLOATING PETALS (CSS only) ── */
+  .petal-bg {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .petal {
+    position: absolute;
+    font-size: 22px;
+    opacity: 0.18;
+    animation: floatPetal linear infinite;
+  }
+  .petal:nth-child(1)  { left:5%;   animation-duration:14s; animation-delay:0s;   font-size:18px; }
+  .petal:nth-child(2)  { left:15%;  animation-duration:18s; animation-delay:2s;   font-size:26px; }
+  .petal:nth-child(3)  { left:27%;  animation-duration:12s; animation-delay:5s;   font-size:16px; }
+  .petal:nth-child(4)  { left:40%;  animation-duration:20s; animation-delay:1s;   font-size:22px; }
+  .petal:nth-child(5)  { left:55%;  animation-duration:15s; animation-delay:7s;   font-size:14px; }
+  .petal:nth-child(6)  { left:68%;  animation-duration:17s; animation-delay:3s;   font-size:28px; }
+  .petal:nth-child(7)  { left:80%;  animation-duration:11s; animation-delay:9s;   font-size:20px; }
+  .petal:nth-child(8)  { left:90%;  animation-duration:19s; animation-delay:4s;   font-size:16px; }
+  .petal:nth-child(9)  { left:48%;  animation-duration:16s; animation-delay:11s;  font-size:24px; }
+  .petal:nth-child(10) { left:72%;  animation-duration:13s; animation-delay:6s;   font-size:18px; }
+  @keyframes floatPetal {
+    0%   { transform: translateY(110vh) rotate(0deg);   opacity: 0; }
+    10%  { opacity: 0.18; }
+    90%  { opacity: 0.18; }
+    100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 60px 24px 48px;
+    background: linear-gradient(160deg, #fce4ec 0%, #f3e5f5 50%, #ffe0b2 100%);
+    border-bottom: 3px dashed var(--rose);
+  }
+  .hero-flowers {
+    font-size: 36px;
+    margin-bottom: 12px;
+    letter-spacing: 6px;
+    animation: wiggle 3s ease-in-out infinite;
+  }
+  @keyframes wiggle {
+    0%,100% { transform: rotate(-2deg); }
+    50%      { transform: rotate(2deg); }
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 9vw, 78px);
+    font-weight: 700;
+    color: var(--hot);
+    line-height: 1;
+    margin-bottom: 6px;
+    text-shadow: 3px 3px 0 rgba(233,30,140,0.15);
+  }
+  .hero-sub-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(16px, 4vw, 26px);
+    color: var(--purple);
+    margin-bottom: 16px;
+  }
+  .hero-desc {
+    font-size: 14px;
+    color: var(--muted);
+    max-width: 420px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+  }
+  .stat-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .stat-pill {
+    background: white;
+    border: 2px solid var(--rose);
+    border-radius: 50px;
+    padding: 10px 22px;
+    text-align: center;
+    box-shadow: 0 4px 14px var(--shadow);
+  }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--hot);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  /* ── TAB NAV ── */
+  .tab-nav {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 24px 24px 0;
+    flex-wrap: wrap;
+  }
+  .tab-btn {
+    background: white;
+    border: 2px solid var(--rose);
+    color: var(--muted);
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    padding: 10px 22px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 2px 8px var(--shadow);
+  }
+  .tab-btn:hover { background: var(--blush); color: var(--hot); transform: translateY(-2px); }
+  .tab-btn.active {
+    background: linear-gradient(135deg, var(--hot), var(--purple));
+    border-color: transparent;
+    color: white;
+    box-shadow: 0 4px 16px rgba(233,30,140,0.35);
+    transform: translateY(-2px);
+  }
+
+  /* ── CONTAINER ── */
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 28px 20px 80px;
+  }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* ── SECTION HEADER ── */
+  .section-header {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--hot);
+    font-weight: 700;
+  }
+  .section-title .emoji { margin: 0 6px; }
+  .section-desc { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+  /* ── WEEK GRID ── */
+  .week-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+  .day-pill {
+    background: white;
+    border: 2px solid #f8c8db;
+    border-radius: 16px;
+    padding: 12px 4px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-height: 72px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    box-shadow: 0 2px 8px var(--shadow);
+  }
+  .day-pill:hover:not(.rest) {
+    border-color: var(--hot);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px var(--shadow);
+  }
+  .day-pill.active {
+    background: linear-gradient(135deg, #fce4ec, #f3e5f5);
+    border-color: var(--hot);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px var(--shadow);
+  }
+  .day-pill.rest { opacity: 0.5; cursor: default; }
+  .day-name { font-size: 10px; font-weight: 800; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+  .day-emoji { font-size: 18px; }
+  .day-type { font-size: 9px; font-weight: 700; color: var(--hot); text-transform: uppercase; letter-spacing: 0.05em; }
+  .day-pill.rest .day-type { color: var(--muted); }
+
+  /* ── WORKOUT CARD ── */
+  .workout-card {
+    background: white;
+    border: 2px solid #f8c8db;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px var(--shadow);
+  }
+  .workout-card-header {
+    padding: 20px 24px 16px;
+    background: linear-gradient(135deg, var(--blush), var(--lavender));
+    border-bottom: 2px dashed #f8c8db;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .workout-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--hot);
+  }
+  .workout-card-sub { font-size: 12px; color: var(--muted); margin-top: 2px; font-weight: 600; }
+
+  .badge {
+    font-size: 11px;
+    font-weight: 800;
+    padding: 6px 14px;
+    border-radius: 50px;
+    letter-spacing: 0.04em;
+  }
+  .badge-pink   { background: #fce4ec; color: var(--hot); border: 1.5px solid var(--rose); }
+  .badge-purple { background: #f3e5f5; color: var(--purple); border: 1.5px solid var(--lilac); }
+  .badge-peach  { background: #ffe0b2; color: #e65100; border: 1.5px solid #ffcc80; }
+
+  /* ── EXERCISE LIST ── */
+  .col-header {
+    display: grid;
+    grid-template-columns: 36px 1fr 72px 90px 80px;
+    gap: 10px;
+    padding: 10px 20px;
+    background: #fdf0f5;
+    border-bottom: 1.5px solid #f8c8db;
+  }
+  .col-h {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-align: center;
+  }
+  .col-h:nth-child(2) { text-align: left; }
+
+  .exercise-row {
+    display: grid;
+    grid-template-columns: 36px 1fr 72px 90px 80px;
+    gap: 10px;
+    align-items: center;
+    padding: 13px 20px;
+    border-bottom: 1.5px solid #fce4ec;
+    transition: background 0.15s;
+  }
+  .exercise-row:last-child { border-bottom: none; }
+  .exercise-row:hover { background: #fff5f8; }
+
+  .ex-check {
+    width: 22px; height: 22px;
+    border: 2px solid var(--rose);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+    flex-shrink: 0;
+    font-size: 13px;
+    background: white;
+  }
+  .ex-check:hover { border-color: var(--hot); background: var(--blush); }
+  .ex-check.done {
+    background: linear-gradient(135deg, var(--rose), var(--lilac));
+    border-color: transparent;
+    box-shadow: 0 2px 8px var(--shadow);
+  }
+  .ex-check.done::after { content: '✿'; color: white; }
+
+  .ex-name { font-size: 13px; font-weight: 700; color: var(--text); }
+  .ex-muscle { font-size: 11px; color: var(--muted); margin-top: 2px; font-weight: 600; }
+  .ex-sets, .ex-reps, .ex-rest {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--purple);
+    text-align: center;
+  }
+  .ex-rest { color: var(--muted); font-size: 11px; }
+
+  /* ── PROGRESS BAR ── */
+  .progress-wrap {
+    padding: 14px 20px;
+    background: #fdf0f5;
+    border-top: 1.5px dashed #f8c8db;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .progress-bar-bg {
+    flex: 1; height: 8px;
+    background: #f8c8db;
+    border-radius: 50px;
+    overflow: hidden;
+  }
+  .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--rose), var(--lilac));
+    border-radius: 50px;
+    transition: width 0.4s cubic-bezier(.34,1.56,.64,1);
+    width: 0%;
+  }
+  .progress-label { font-size: 12px; font-weight: 800; color: var(--hot); white-space: nowrap; }
+
+  /* ── INFO GRID ── */
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 24px;
+  }
+  @media(max-width:540px){ .info-grid{ grid-template-columns:1fr; } }
+
+  .info-card {
+    background: white;
+    border: 2px solid #f8c8db;
+    border-radius: 16px;
+    padding: 18px 20px;
+    box-shadow: 0 3px 12px var(--shadow);
+  }
+  .info-card-title {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--hot);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+  }
+  .info-card ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+  .info-card li {
+    font-size: 12px;
+    color: var(--muted);
+    padding-left: 18px;
+    position: relative;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+  .info-card li::before { content: '🌸'; position: absolute; left: 0; font-size: 11px; top: 1px; }
+
+  /* ── NUTRITION TAB ── */
+  .macro-row {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .macro-card {
+    background: white;
+    border: 2px solid #f8c8db;
+    border-radius: 18px;
+    padding: 20px 12px;
+    text-align: center;
+    box-shadow: 0 4px 14px var(--shadow);
+  }
+  .macro-card .top-emoji { font-size: 28px; margin-bottom: 8px; display: block; }
+  .macro-num { font-family:'Playfair Display',serif; font-size:36px; font-weight:700; color:var(--hot); line-height:1; }
+  .macro-unit { font-size:13px; color:var(--muted); }
+  .macro-name { font-size:11px; font-weight:800; color:var(--purple); margin-top:5px; text-transform:uppercase; letter-spacing:0.08em; }
+
+  .meal-card {
+    background: white;
+    border: 2px solid #f8c8db;
+    border-radius: 16px;
+    padding: 18px 20px;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 12px var(--shadow);
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .meal-emoji { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+  .meal-title { font-size: 11px; font-weight: 800; color: var(--hot); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 5px; }
+  .meal-desc { font-size: 13px; color: var(--text); line-height: 1.6; font-weight: 600; }
+  .meal-macros { font-size: 11px; color: var(--muted); margin-top: 5px; font-weight: 700; }
+
+  /* ── PROGRESS LOG ── */
+  .log-form {
+    background: white;
+    border: 2px solid #f8c8db;
+    border-radius: 20px;
+    padding: 22px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 16px var(--shadow);
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
+  .form-group { display: flex; flex-direction: column; gap: 6px; flex: 1; min-width: 110px; }
+  .form-group label { font-size: 10px; font-weight: 800; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+  .form-group input {
+    background: #fff5f8;
+    border: 2px solid #f8c8db;
+    color: var(--text);
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px 12px;
+    border-radius: 12px;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .form-group input:focus { border-color: var(--hot); }
+  .btn-log {
+    background: linear-gradient(135deg, var(--hot), var(--purple));
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    padding: 12px 22px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.15s, transform 0.15s;
+    white-space: nowrap;
+    box-shadow: 0 4px 14px rgba(233,30,140,0.3);
+  }
+  .btn-log:hover { opacity: 0.9; transform: translateY(-2px); }
+
+  .log-entries {
+    background: white;
+    border: 2px solid #f8c8db;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px var(--shadow);
+  }
+  .log-entry {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 20px;
+    border-bottom: 1.5px solid #fce4ec;
+    font-size: 14px;
+    flex-wrap: wrap;
+  }
+  .log-entry:last-child { border-bottom: none; }
+  .log-entry-date { font-size: 12px; font-weight: 700; color: var(--muted); }
+  .log-entry-weight { font-family:'Playfair Display',serif; font-size: 26px; font-weight: 700; color: var(--hot); }
+  .log-entry-note { font-size: 12px; color: var(--muted); font-weight: 600; }
+  .log-entry-del {
+    background: none; border: none; cursor: pointer;
+    font-size: 16px; color: var(--rose); opacity: 0.5;
+    transition: opacity 0.15s;
+  }
+  .log-entry-del:hover { opacity: 1; }
+
+  .empty-state {
+    padding: 52px 24px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .empty-state .big { font-size: 40px; display: block; margin-bottom: 10px; }
+
+  /* ── TIPS TAB ── */
+  .tip-card {
+    background: white;
+    border: 2px solid #f8c8db;
+    border-radius: 18px;
+    padding: 18px 20px;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 12px var(--shadow);
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .tip-emoji { font-size: 26px; flex-shrink: 0; }
+  .tip-title { font-size: 14px; font-weight: 800; color: var(--hot); margin-bottom: 5px; }
+  .tip-body { font-size: 13px; color: var(--muted); line-height: 1.6; font-weight: 600; }
+
+  /* ── RESPONSIVE ── */
+  @media(max-width:600px){
+    .exercise-row, .col-header {
+      grid-template-columns: 32px 1fr 60px 80px;
+    }
+    .exercise-row > *:nth-child(5),
+    .col-header   > *:nth-child(5) { display: none; }
+    .week-grid { grid-template-columns: repeat(4,1fr); }
+    .macro-row { grid-template-columns: repeat(3,1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- Floating petals -->
+<div class="petal-bg">
+  <span class="petal">🌸</span><span class="petal">🌺</span><span class="petal">🌷</span>
+  <span class="petal">✿</span><span class="petal">🌸</span><span class="petal">💐</span>
+  <span class="petal">🌹</span><span class="petal">🌸</span><span class="petal">🌺</span>
+  <span class="petal">🌷</span>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-flowers">🌸 🌺 🌷 🌸 🌺</div>
+  <h1>My Glow-Up</h1>
+  <div class="hero-sub-title">body recomp plan ✨</div>
+  <p class="hero-desc">You've got this, babe! 4 days a week to lose fat, build muscle, and feel absolutely amazing 💪🌷</p>
+  <div class="stat-row">
+    <div class="stat-pill">
+      <div class="stat-num">4</div>
+      <div class="stat-label">Days / Week</div>
+    </div>
+    <div class="stat-pill">
+      <div class="stat-num">~10</div>
+      <div class="stat-label">lbs Goal 🎯</div>
+    </div>
+    <div class="stat-pill">
+      <div class="stat-num">12</div>
+      <div class="stat-label">Weeks 🌟</div>
+    </div>
+    <div class="stat-pill">
+      <div class="stat-num">Full</div>
+      <div class="stat-label">Body 💪</div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB NAV -->
+<div class="tab-nav">
+  <button class="tab-btn active" onclick="switchTab('schedule',this)">🏋️ Schedule</button>
+  <button class="tab-btn" onclick="switchTab('nutrition',this)">🥗 Nutrition</button>
+  <button class="tab-btn" onclick="switchTab('progress',this)">📈 Progress</button>
+  <button class="tab-btn" onclick="switchTab('tips',this)">💡 Tips</button>
+</div>
+
+<div class="container">
+
+  <!-- ── SCHEDULE TAB ── -->
+  <div id="tab-schedule" class="tab-panel active">
+    <div class="section-header">
+      <div class="section-title"><span class="emoji">🗓️</span>Your Week<span class="emoji">🌸</span></div>
+      <div class="section-desc">Tap a workout day to see your exercises!</div>
+    </div>
+
+    <div class="week-grid">
+      <div class="day-pill active" onclick="selectDay(this,'day-mon')">
+        <span class="day-name">Mon</span>
+        <span class="day-emoji">💪</span>
+        <span class="day-type">Push</span>
+      </div>
+      <div class="day-pill rest">
+        <span class="day-name">Tue</span>
+        <span class="day-emoji">🛁</span>
+        <span class="day-type">Rest</span>
+      </div>
+      <div class="day-pill" onclick="selectDay(this,'day-wed')">
+        <span class="day-name">Wed</span>
+        <span class="day-emoji">🌺</span>
+        <span class="day-type">Pull</span>
+      </div>
+      <div class="day-pill rest">
+        <span class="day-name">Thu</span>
+        <span class="day-emoji">🌸</span>
+        <span class="day-type">Rest</span>
+      </div>
+      <div class="day-pill" onclick="selectDay(this,'day-fri')">
+        <span class="day-name">Fri</span>
+        <span class="day-emoji">🦵</span>
+        <span class="day-type">Legs</span>
+      </div>
+      <div class="day-pill" onclick="selectDay(this,'day-sat')">
+        <span class="day-name">Sat</span>
+        <span class="day-emoji">✨</span>
+        <span class="day-type">Full</span>
+      </div>
+      <div class="day-pill rest">
+        <span class="day-name">Sun</span>
+        <span class="day-emoji">☁️</span>
+        <span class="day-type">Rest</span>
+      </div>
+    </div>
+
+    <!-- MONDAY -->
+    <div id="day-mon" class="workout-card">
+      <div class="workout-card-header">
+        <div>
+          <div class="workout-card-title">💪 Monday — Push Day</div>
+          <div class="workout-card-sub">Chest · Shoulders · Triceps</div>
+        </div>
+        <span class="badge badge-pink">~55 min 🕐</span>
+      </div>
+      <div class="col-header">
+        <div class="col-h"></div>
+        <div class="col-h">Exercise</div>
+        <div class="col-h">Sets</div>
+        <div class="col-h">Reps</div>
+        <div class="col-h">Rest</div>
+      </div>
+      <div class="exercise-list" id="list-mon"></div>
+      <div class="progress-wrap">
+        <div class="progress-bar-bg"><div class="progress-bar-fill" id="prog-mon"></div></div>
+        <div class="progress-label" id="prog-label-mon">0 / 6 done 🌸</div>
+      </div>
+    </div>
+
+    <!-- WEDNESDAY -->
+    <div id="day-wed" class="workout-card" style="display:none;">
+      <div class="workout-card-header">
+        <div>
+          <div class="workout-card-title">🌺 Wednesday — Pull Day</div>
+          <div class="workout-card-sub">Back · Biceps · Rear Delts</div>
+        </div>
+        <span class="badge badge-purple">~55 min 🕐</span>
+      </div>
+      <div class="col-header">
+        <div class="col-h"></div>
+        <div class="col-h">Exercise</div>
+        <div class="col-h">Sets</div>
+        <div class="col-h">Reps</div>
+        <div class="col-h">Rest</div>
+      </div>
+      <div class="exercise-list" id="list-wed"></div>
+      <div class="progress-wrap">
+        <div class="progress-bar-bg"><div class="progress-bar-fill" id="prog-wed"></div></div>
+        <div class="progress-label" id="prog-label-wed">0 / 6 done 🌸</div>
+      </div>
+    </div>
+
+    <!-- FRIDAY -->
+    <div id="day-fri" class="workout-card" style="display:none;">
+      <div class="workout-card-header">
+        <div>
+          <div class="workout-card-title">🦵 Friday — Leg Day</div>
+          <div class="workout-card-sub">Quads · Hamstrings · Glutes · Calves</div>
+        </div>
+        <span class="badge badge-peach">~60 min 🕐</span>
+      </div>
+      <div class="col-header">
+        <div class="col-h"></div>
+        <div class="col-h">Exercise</div>
+        <div class="col-h">Sets</div>
+        <div class="col-h">Reps</div>
+        <div class="col-h">Rest</div>
+      </div>
+      <div class="exercise-list" id="list-fri"></div>
+      <div class="progress-wrap">
+        <div class="progress-bar-bg"><div class="progress-bar-fill" id="prog-fri"></div></div>
+        <div class="progress-label" id="prog-label-fri">0 / 6 done 🌸</div>
+      </div>
+    </div>
+
+    <!-- SATURDAY -->
+    <div id="day-sat" class="workout-card" style="display:none;">
+      <div class="workout-card-header">
+        <div>
+          <div class="workout-card-title">✨ Saturday — Full Body + Core</div>
+          <div class="workout-card-sub">Compounds · Core · Cardio Finisher</div>
+        </div>
+        <span class="badge badge-pink">~65 min 🕐</span>
+      </div>
+      <div class="col-header">
+        <div class="col-h"></div>
+        <div class="col-h">Exercise</div>
+        <div class="col-h">Sets</div>
+        <div class="col-h">Reps</div>
+        <div class="col-h">Rest</div>
+      </div>
+      <div class="exercise-list" id="list-sat"></div>
+      <div class="progress-wrap">
+        <div class="progress-bar-bg"><div class="progress-bar-fill" id="prog-sat"></div></div>
+        <div class="progress-label" id="prog-label-sat">0 / 6 done 🌸</div>
+      </div>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="info-card-title">🌞 Warm-up every session</div>
+        <ul>
+          <li>5 min light cardio (bike or treadmill)</li>
+          <li>Arm circles, leg swings, hip openers</li>
+          <li>2 warm-up sets on your first exercise</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <div class="info-card-title">🌙 Cool-down every session</div>
+        <ul>
+          <li>5 min easy walk on the treadmill</li>
+          <li>Hold each stretch 30–45 seconds</li>
+          <li>Focus on the muscles you just worked</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <div class="info-card-title">📈 Progressive Overload</div>
+        <ul>
+          <li>Add 2.5–5 lbs when you hit top of rep range</li>
+          <li>Write down your working weights each session</li>
+          <li>Form first, weight second — always!</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <div class="info-card-title">💫 Body Recomp Reminder</div>
+        <ul>
+          <li>Eat near maintenance — small deficit is fine</li>
+          <li>High protein is your best friend 🥩</li>
+          <li>Results are slower but they STICK!</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── NUTRITION TAB ── -->
+  <div id="tab-nutrition" class="tab-panel">
+    <div class="section-header">
+      <div class="section-title"><span class="emoji">🥗</span>Nourish Yourself<span class="emoji">🌷</span></div>
+      <div class="section-desc">Food is fuel AND joy — eat things that make you feel good!</div>
+    </div>
+
+    <div class="macro-row">
+      <div class="macro-card">
+        <span class="top-emoji">🔥</span>
+        <div class="macro-num">~2000</div>
+        <div class="macro-unit">kcal / day</div>
+        <div class="macro-name">Calories</div>
+      </div>
+      <div class="macro-card">
+        <span class="top-emoji">🥩</span>
+        <div class="macro-num">160<span style="font-size:18px">g</span></div>
+        <div class="macro-unit">&nbsp;</div>
+        <div class="macro-name">Protein</div>
+      </div>
+      <div class="macro-card">
+        <span class="top-emoji">🍚</span>
+        <div class="macro-num">200<span style="font-size:18px">g</span></div>
+        <div class="macro-unit">&nbsp;</div>
+        <div class="macro-name">Carbs</div>
+      </div>
+    </div>
+    <p style="font-size:12px;color:var(--muted);margin-bottom:28px;text-align:center;font-weight:700;">Estimates for ~175 lb person — adjust based on your own hunger & energy 💕</p>
+
+    <div class="meal-card">
+      <div class="meal-emoji">☀️</div>
+      <div>
+        <div class="meal-title">Breakfast · ~7am</div>
+        <div class="meal-desc">4-egg omelette with spinach & feta · 1 cup oats with berries · Black coffee or water</div>
+        <div class="meal-macros">~550 kcal · 38g protein · 55g carbs · 18g fat</div>
+      </div>
+    </div>
+    <div class="meal-card">
+      <div class="meal-emoji">🌿</div>
+      <div>
+        <div class="meal-title">Lunch · ~12pm</div>
+        <div class="meal-desc">Grilled chicken breast (6 oz) · 1 cup brown rice · Mixed greens with olive oil + lemon</div>
+        <div class="meal-macros">~580 kcal · 52g protein · 55g carbs · 12g fat</div>
+      </div>
+    </div>
+    <div class="meal-card">
+      <div class="meal-emoji">🍌</div>
+      <div>
+        <div class="meal-title">Pre-Workout Snack · ~3pm</div>
+        <div class="meal-desc">Greek yogurt (1 cup) with banana · Optional: 1 scoop whey protein shake</div>
+        <div class="meal-macros">~300 kcal · 28g protein · 38g carbs · 3g fat</div>
+      </div>
+    </div>
+    <div class="meal-card">
+      <div class="meal-emoji">🌙</div>
+      <div>
+        <div class="meal-title">Dinner · ~7pm</div>
+        <div class="meal-desc">Salmon (6 oz) or lean ground beef · Roasted sweet potato · Steamed broccoli</div>
+        <div class="meal-macros">~570 kcal · 42g protein · 52g carbs · 18g fat</div>
+      </div>
+    </div>
+
+    <div style="margin-top:20px;">
+      <div class="info-card">
+        <div class="info-card-title">💕 Key Nutrition Rules for Recomp</div>
+        <ul>
+          <li>Protein with every meal — chicken, fish, eggs, beef, yogurt, cottage cheese</li>
+          <li>Time your carbs around workouts for energy & recovery</li>
+          <li>Healthy fats are your friends — they support your hormones!</li>
+          <li>Drink 3–4L of water daily, more on gym days 💧</li>
+          <li>Minimize alcohol — it slows fat loss AND recovery</li>
+          <li>Sleep 7–9 hours — that's literally when muscle is built 😴</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PROGRESS LOG ── -->
+  <div id="tab-progress" class="tab-panel">
+    <div class="section-header">
+      <div class="section-title"><span class="emoji">📈</span>Track Your Journey<span class="emoji">🌸</span></div>
+      <div class="section-desc">Log your weekly weigh-ins — you're doing amazing!</div>
+    </div>
+
+    <div class="log-form">
+      <div class="form-group">
+        <label>📅 Date</label>
+        <input type="date" id="log-date">
+      </div>
+      <div class="form-group" style="max-width:140px;">
+        <label>⚖️ Weight (lbs)</label>
+        <input type="number" id="log-weight" placeholder="e.g. 175" step="0.1">
+      </div>
+      <div class="form-group">
+        <label>💭 Note (optional)</label>
+        <input type="text" id="log-note" placeholder="e.g. felt strong today!">
+      </div>
+      <button class="btn-log" onclick="addLog()">Log it 🌸</button>
+    </div>
+
+    <div class="log-entries" id="log-entries">
+      <div class="empty-state" id="log-empty">
+        <span class="big">🌱</span>
+        No entries yet! Log your first weigh-in above to start tracking your glow-up ✨
+      </div>
+    </div>
+  </div>
+
+  <!-- ── TIPS TAB ── -->
+  <div id="tab-tips" class="tab-panel">
+    <div class="section-header">
+      <div class="section-title"><span class="emoji">💡</span>Beginner Tips<span class="emoji">🌺</span></div>
+      <div class="section-desc">Little things that make a big difference 💕</div>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-emoji">🛁</div>
+      <div>
+        <div class="tip-title">Don't skip the "boring" stuff</div>
+        <div class="tip-body">Warm-up, cool-down, and sleep are not optional extras — they're literally where your body adapts and changes. Most beginners skip these and wonder why they plateau after 8 weeks!</div>
+      </div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-emoji">🪞</div>
+      <div>
+        <div class="tip-title">Form first, weight second always</div>
+        <div class="tip-body">Bad form + heavy weight = injury. Injury = weeks off = zero progress. Learn the movement with light weight first, then load it up. Use a mirror or your phone camera to check yourself!</div>
+      </div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-emoji">📸</div>
+      <div>
+        <div class="tip-title">The scale is a liar — take progress photos!</div>
+        <div class="tip-body">During recomp, you can lose fat AND gain muscle at the same time, so the scale might barely move while your body totally transforms. Take photos every 4 weeks and measure your waist — that's the real tea ☕</div>
+      </div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-emoji">🌷</div>
+      <div>
+        <div class="tip-title">Consistency beats perfection every time</div>
+        <div class="tip-body">A good workout done consistently beats a perfect workout done twice a month. Missed a day? Don't double up — just pick up where you left off. One missed session = nothing. Missing every session = everything.</div>
+      </div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-emoji">😌</div>
+      <div>
+        <div class="tip-title">Soreness ≠ a good workout</div>
+        <div class="tip-body">As your body adapts, you'll feel less sore — and that's actually a GOOD sign, not regression! Chase progressive overload (lifting more over time), not soreness. Your muscles are learning 🧠</div>
+      </div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-emoji">🥩</div>
+      <div>
+        <div class="tip-title">Protein is truly non-negotiable</div>
+        <div class="tip-body">Without enough protein, your body literally can't repair and build muscle — even if you train perfectly. Struggling to hit your target from food alone? A protein shake is a totally valid and easy fix 🥤</div>
+      </div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-emoji">💪</div>
+      <div>
+        <div class="tip-title">Week 4–6 is when most people quit — don't!</div>
+        <div class="tip-body">The new-gym excitement wears off but visible results haven't fully shown yet. This is the critical window! The girls who push through this phase are the ones who actually glow up. You WILL see the results — trust the process 🌸</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<script>
+const workouts = {
+  mon: [
+    { name:'Barbell Bench Press',        muscle:'Chest',          sets:3, reps:'8–10',    rest:'90s' },
+    { name:'Incline Dumbbell Press',     muscle:'Upper Chest',    sets:3, reps:'10–12',   rest:'75s' },
+    { name:'Cable Chest Fly',            muscle:'Chest',          sets:3, reps:'12–15',   rest:'60s' },
+    { name:'Overhead Press (BB or DB)',  muscle:'Shoulders',      sets:3, reps:'8–10',    rest:'90s' },
+    { name:'Lateral Raises',             muscle:'Side Delts',     sets:3, reps:'15–20',   rest:'60s' },
+    { name:'Tricep Rope Pushdown',       muscle:'Triceps',        sets:3, reps:'12–15',   rest:'60s' },
+  ],
+  wed: [
+    { name:'Barbell Row',                muscle:'Back',           sets:3, reps:'8–10',    rest:'90s' },
+    { name:'Lat Pulldown',               muscle:'Lats',           sets:3, reps:'10–12',   rest:'75s' },
+    { name:'Seated Cable Row',           muscle:'Mid Back',       sets:3, reps:'10–12',   rest:'75s' },
+    { name:'Dumbbell Rear Delt Fly',     muscle:'Rear Delts',     sets:3, reps:'15–20',   rest:'60s' },
+    { name:'EZ Bar Curl',                muscle:'Biceps',         sets:3, reps:'10–12',   rest:'60s' },
+    { name:'Hammer Curl',                muscle:'Brachialis',     sets:3, reps:'12–15',   rest:'60s' },
+  ],
+  fri: [
+    { name:'Barbell Back Squat',         muscle:'Quads / Glutes', sets:4, reps:'6–8',     rest:'2 min' },
+    { name:'Romanian Deadlift',          muscle:'Hamstrings',     sets:3, reps:'10–12',   rest:'90s' },
+    { name:'Leg Press',                  muscle:'Quads',          sets:3, reps:'12–15',   rest:'90s' },
+    { name:'Leg Curl (Machine)',         muscle:'Hamstrings',     sets:3, reps:'12–15',   rest:'60s' },
+    { name:'Walking Lunges',             muscle:'Quads / Glutes', sets:3, reps:'10 each', rest:'75s' },
+    { name:'Standing Calf Raise',        muscle:'Calves',         sets:4, reps:'15–20',   rest:'45s' },
+  ],
+  sat: [
+    { name:'Deadlift',                   muscle:'Back / Legs',    sets:3, reps:'5–6',     rest:'2 min' },
+    { name:'Pull-Ups / Assisted',        muscle:'Back / Biceps',  sets:3, reps:'6–10',    rest:'90s' },
+    { name:'Dumbbell Push Press',        muscle:'Shoulders',      sets:3, reps:'10–12',   rest:'75s' },
+    { name:'Plank',                      muscle:'Core',           sets:3, reps:'40–60s',  rest:'45s' },
+    { name:'Ab Wheel Rollout',           muscle:'Core',           sets:3, reps:'8–12',    rest:'60s' },
+    { name:'Rowing Machine Intervals',   muscle:'Cardio / Full',  sets:1, reps:'10 min',  rest:'—' },
+  ],
+};
+
+const checked = { mon:{}, wed:{}, fri:{}, sat:{} };
+
+function renderList(day) {
+  const list = document.getElementById('list-' + day);
+  list.innerHTML = '';
+  workouts[day].forEach((ex, i) => {
+    const row = document.createElement('div');
+    row.className = 'exercise-row';
+    row.innerHTML = `
+      <div class="ex-check${checked[day][i] ? ' done' : ''}" onclick="toggleCheck('${day}',${i})"></div>
+      <div>
+        <div class="ex-name">${ex.name}</div>
+        <div class="ex-muscle">${ex.muscle}</div>
+      </div>
+      <div class="ex-sets">${ex.sets}</div>
+      <div class="ex-reps">${ex.reps}</div>
+      <div class="ex-rest">${ex.rest}</div>
+    `;
+    list.appendChild(row);
+  });
+  updateProgress(day);
+}
+
+function toggleCheck(day, idx) {
+  checked[day][idx] = !checked[day][idx];
+  renderList(day);
+}
+
+function updateProgress(day) {
+  const total = workouts[day].length;
+  const done = Object.values(checked[day]).filter(Boolean).length;
+  const pct = Math.round((done / total) * 100);
+  document.getElementById('prog-' + day).style.width = pct + '%';
+  const emoji = done === total ? ' 🎉' : ' 🌸';
+  document.getElementById('prog-label-' + day).textContent = `${done} / ${total} done${emoji}`;
+}
+
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  btn.classList.add('active');
+}
+
+const allDayPills = document.querySelectorAll('.day-pill:not(.rest)');
+function selectDay(el, id) {
+  allDayPills.forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  ['day-mon','day-wed','day-fri','day-sat'].forEach(d => {
+    document.getElementById(d).style.display = 'none';
+  });
+  document.getElementById(id).style.display = 'block';
+}
+
+const logs = [];
+function addLog() {
+  const date   = document.getElementById('log-date').value;
+  const weight = document.getElementById('log-weight').value;
+  const note   = document.getElementById('log-note').value;
+  if (!date || !weight) return;
+  logs.unshift({ date, weight: parseFloat(weight), note });
+  logs.sort((a,b) => new Date(b.date) - new Date(a.date));
+  renderLogs();
+  document.getElementById('log-weight').value = '';
+  document.getElementById('log-note').value   = '';
+}
+
+function deleteLog(idx) {
+  logs.splice(idx, 1);
+  renderLogs();
+}
+
+function renderLogs() {
+  const container = document.getElementById('log-entries');
+  const empty     = document.getElementById('log-empty');
+  if (logs.length === 0) { container.innerHTML = ''; container.appendChild(empty); empty.style.display = ''; return; }
+  empty.style.display = 'none';
+  container.innerHTML = '';
+  logs.forEach((l, i) => {
+    const el = document.createElement('div');
+    el.className = 'log-entry';
+    const d = new Date(l.date + 'T00:00:00');
+    const label = d.toLocaleDateString('en-US', { weekday:'short', month:'short', day:'numeric' });
+    el.innerHTML = `
+      <div>
+        <div class="log-entry-date">${label}</div>
+        ${l.note ? `<div class="log-entry-note">${l.note} 💕</div>` : ''}
+      </div>
+      <div class="log-entry-weight">${l.weight} lbs</div>
+      <button class="log-entry-del" onclick="deleteLog(${i})" title="Delete">✕</button>
+    `;
+    container.appendChild(el);
+  });
+}
+
+['mon','wed','fri','sat'].forEach(renderList);
+document.getElementById('log-date').valueAsDate = new Date();
+</script>
+</body>
+</html>
